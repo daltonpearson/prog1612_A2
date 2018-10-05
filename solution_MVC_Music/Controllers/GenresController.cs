@@ -151,19 +151,24 @@ namespace solution_MVC_Music.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            var genre = await _context.Genres.FirstOrDefaultAsync(m => m.ID == id);
+
             if (GenreHasSongs(id))
             {
+                
                 ModelState.AddModelError("", "Unable to delete genre. Genre is assigned to song.");
-                return RedirectToAction(nameof(Index));
+
+                return View(genre);
             }
 
             if (GenreHasAlbums(id))
             {
                 ModelState.AddModelError("", "Unable to delete genre. Genre is assigned to album.");
-                return RedirectToAction(nameof(Index));
+
+                return View(genre);
             }
 
-            var genre = await _context.Genres.FindAsync(id);
+            
 
             if (genre == null)
             {

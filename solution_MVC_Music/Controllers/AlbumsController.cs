@@ -116,7 +116,7 @@ namespace solution_MVC_Music.Controllers
         public async Task<IActionResult> Edit(int id, [Bind("ID,Name,YearProduced,Price,GenreID")] Album album)
         {
 
-            if (TitleYearDuplicate(album.Name, album.YearProduced))
+            if (TitleYearDuplicate(album.Name, album.YearProduced, id))
             {
                 ModelState.AddModelError("", "Unable to save changes. Title and Year Produced must be unique.");
                 ViewData["GenreID"] = new SelectList(_context.Genres.OrderBy(x => x.Name), "ID", "Name", album.GenreID);
