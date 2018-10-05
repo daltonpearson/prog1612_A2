@@ -84,7 +84,7 @@ using solution_MVC_Music.Models;
             WriteLiteral("\r\n        </dd>\r\n    </dl>\r\n</div>\r\n<div>\r\n    ");
             EndContext();
             BeginContext(382, 54, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b5a1d3b09f9546d4ad2d294f6fb9f585", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "de8bfe1415184424b98752760715c481", async() => {
                 BeginContext(428, 4, true);
                 WriteLiteral("Edit");
                 EndContext();
@@ -119,7 +119,7 @@ using solution_MVC_Music.Models;
             WriteLiteral(" |\r\n    ");
             EndContext();
             BeginContext(444, 38, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "600d36ac48764afaa4f0d5f741afc775", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "75cd81da6d0844d092d32d3611f8ec31", async() => {
                 BeginContext(466, 12, true);
                 WriteLiteral("Back to List");
                 EndContext();

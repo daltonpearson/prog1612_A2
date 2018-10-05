@@ -152,23 +152,20 @@ namespace solution_MVC_Music.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var genre = await _context.Genres.FirstOrDefaultAsync(m => m.ID == id);
+            var hasSongs = GenreHasSongs(id);
+            var hasAlbums = GenreHasAlbums(id);
 
-            if (GenreHasSongs(id))
+            if (hasSongs || hasAlbums)
             {
+                if (hasSongs)
+                    ModelState.AddModelError("", "Unable to delete genre. Genre is assigned to song.");
+
+                if (hasAlbums)
+                    ModelState.AddModelError("", "Unable to delete genre. Genre is assigned to album.");
                 
-                ModelState.AddModelError("", "Unable to delete genre. Genre is assigned to song.");
-
                 return View(genre);
             }
 
-            if (GenreHasAlbums(id))
-            {
-                ModelState.AddModelError("", "Unable to delete genre. Genre is assigned to album.");
-
-                return View(genre);
-            }
-
-            
 
             if (genre == null)
             {

@@ -60,7 +60,7 @@ namespace solution_MVC_Music.Models
             {
                 return FirstName
                     + (string.IsNullOrEmpty(MiddleName) ? " " :
-                        (" " + (char?)MiddleName[0] + ". ").ToUpper())
+                        (" " + (MiddleName + " ")))
                     + LastName;
             }
         }
